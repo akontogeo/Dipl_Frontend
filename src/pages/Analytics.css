@@ -1,0 +1,303 @@
+.analytics-page {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.analytics-page .page-header {
+  margin-bottom: 2rem;
+}
+
+.analytics-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.analytics-page .subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Reports Section */
+.reports-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  margin-top: 1.5rem;
+}
+
+.reports-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.reports-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 1.75rem;
+}
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.report-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #f9fafb;
+  transition: box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+  box-shadow: 0 4px 16px rgba(44, 71, 115, 0.12);
+}
+
+.report-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.report-card-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 0.75rem 0;
+}
+
+.report-image-wrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.report-image:hover {
+  transform: scale(1.02);
+}
+
+.report-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  background: #2c4773;
+  color: white;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.report-download-btn:hover {
+  background: #1e3352;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(44, 71, 115, 0.3);
+}
+
+.analytics-page .active-analysis-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #2c4773, #3b5998);
+  color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(44, 71, 115, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(44, 71, 115, 0);
+  }
+}
+
+.analytics-page .badge-text {
+  font-size: 0.95rem;
+}
+
+.analytics-page .selection-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-page .section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-page .form-group {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.analytics-page .form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.analytics-page .form-select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.analytics-page .form-select:hover:not(:disabled) {
+  border-color: #2c4773;
+}
+
+.analytics-page .form-select:focus {
+  outline: none;
+  border-color: #2c4773;
+  box-shadow: 0 0 0 3px rgba(44, 71, 115, 0.1);
+}
+
+.analytics-page .form-select:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.analytics-page .form-input-text {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2937;
+  transition: all 0.2s;
+}
+
+.analytics-page .form-input-text:hover:not(:disabled) {
+  border-color: #2c4773;
+}
+
+.analytics-page .form-input-text:focus {
+  outline: none;
+  border-color: #2c4773;
+  box-shadow: 0 0 0 3px rgba(44, 71, 115, 0.1);
+}
+
+.analytics-page .form-input-text:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.analytics-page .btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #2c4773, #3b5998);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-page .btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.analytics-page .btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.analytics-page .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.analytics-page .status-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.analytics-page .status-card.success {
+  background: #ecfdf5;
+  border-color: #10b981;
+}
+
+.analytics-page .status-card h3 {
+  font-size: 1.125rem;
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.analytics-page .status-card p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.analytics-page .status-message {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.analytics-page .success-message {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.analytics-page .error-message {
+  background: #fee;
+  border: 1px solid #fcc;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #c00;
+  margin-bottom: 1rem;
+}

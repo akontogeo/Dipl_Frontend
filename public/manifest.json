@@ -1,0 +1,15 @@
+{
+  "short_name": "GazeFlow AI",
+  "name": "GazeFlow AI - Gaze Tracking & Object Detection",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff"
+}
