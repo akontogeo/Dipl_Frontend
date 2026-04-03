@@ -292,40 +292,21 @@ const Analytics: React.FC = () => {
               </a>
             </div>
 
+            {/* ΝΕΟ ΔΙΑΓΡΑΜΜΑ: report_ttff_scientific.png */}
             <div className="report-card">
-              <h3 className="report-card-title">Gaze Duration per Object</h3>
-              <p className="report-card-subtitle">Bar Chart – Time spent per object</p>
+              <h3 className="report-card-title">TTFF Scientific</h3>
+              <p className="report-card-subtitle">Scientific TTFF Bar Chart</p>
               <div className="report-image-wrapper">
                 <img
-                  src={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/outputs/sessions/${encodeURIComponent(completedSession)}/report_duration.png`}
-                  alt="Duration Bar Chart Report"
+                  src={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/outputs/sessions/${encodeURIComponent(completedSession)}/report_ttff_scientific.png`}
+                  alt="TTFF Scientific Bar Chart Report"
                   className="report-image"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
               </div>
               <a
-                href={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/analysis/download-report?file_path=outputs/sessions/${encodeURIComponent(completedSession)}/report_duration.png`}
-                download={`${completedSession}_duration_chart.png`}
-                className="report-download-btn"
-              >
-                📥 Download
-              </a>
-            </div>
-
-            <div className="report-card">
-              <h3 className="report-card-title">Time to First Fixation</h3>
-              <p className="report-card-subtitle">Bar Chart – TTFF per object</p>
-              <div className="report-image-wrapper">
-                <img
-                  src={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/outputs/sessions/${encodeURIComponent(completedSession)}/report_ttff.png`}
-                  alt="TTFF Bar Chart Report"
-                  className="report-image"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                />
-              </div>
-              <a
-                href={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/analysis/download-report?file_path=outputs/sessions/${encodeURIComponent(completedSession)}/report_ttff.png`}
-                download={`${completedSession}_ttff_chart.png`}
+                href={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/analysis/download-report?file_path=outputs/sessions/${encodeURIComponent(completedSession)}/report_ttff_scientific.png`}
+                download={`${completedSession}_ttff_scientific_chart.png`}
                 className="report-download-btn"
               >
                 📥 Download
@@ -351,6 +332,29 @@ const Analytics: React.FC = () => {
                 📥 Download
               </a>
             </div>
+
+            {/* ΝΕΟ ΔΙΑΓΡΑΜΜΑ: report_fixation_timeline.png */}
+            <div className="report-card">
+              <h3 className="report-card-title">Fixation Timeline</h3>
+              <p className="report-card-subtitle">Fixation Timeline Chart</p>
+              <div className="report-image-wrapper">
+                <img
+                  src={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/outputs/sessions/${encodeURIComponent(completedSession)}/report_fixation_timeline.png`}
+                  alt="Fixation Timeline Chart Report"
+                  className="report-image"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                />
+              </div>
+              <a
+                href={`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/analysis/download-report?file_path=outputs/sessions/${encodeURIComponent(completedSession)}/report_fixation_timeline.png`}
+                download={`${completedSession}_fixation_timeline_chart.png`}
+                className="report-download-btn"
+              >
+                📥 Download
+              </a>
+            </div>
+            {/* ΝΕΟ ΔΙΑΓΡΑΜΜΑ: report_ttff_scientific.png */}
+
           </div>
         </div>
       )}
