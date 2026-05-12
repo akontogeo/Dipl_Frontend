@@ -84,6 +84,14 @@ export interface AnalysisStatus {
   video_file?: string;
   excel_file?: string;
   percentage?: number;
+  // ΠΡΟΣΘΕΣΕ ΤΑ ΠΑΡΑΚΑΤΩ ΓΙΑ ΝΑ ΣΤΑΜΑΤΗΣΟΥΝ ΤΑ ΛΑΘΗ:
+  pie_chart?: string;
+  ttff_chart?: string;
+  pupil_chart?: string;
+  timeline_chart?: string;
+  dwell_bar_chart?: string;
+  pupil_time_chart?: string;
+  mean_fixation?: string;
 }
 
 export interface NotFoundStatus {
