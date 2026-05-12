@@ -313,40 +313,59 @@
   transform: scale(1.02);
 }
 
+/* analytics.css */
+
 .image-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.85); /* Σκοτεινό background */
+  background: rgba(0, 0, 0, 0.9); /* Λίγο πιο σκούρο για να μην αποσπάται η προσοχή */
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  align-items: flex-start; /* Αλλαγή από center σε flex-start για να ξεκινάει από πάνω η εικόνα */
+  z-index: 2000;
+  overflow-y: auto; /* Ενεργοποιεί το scroll στο overlay */
+  padding: 40px 20px; /* Χώρος γύρω από την εικόνα */
   cursor: zoom-out;
 }
 
 .image-modal-content {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 95%; /* Χρησιμοποιεί σχεδόν όλο το πλάτος */
+  margin: auto; /* Κεντράρει την εικόνα αν είναι μικρή */
 }
 
 .image-modal-content img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  height: auto; /* Αφήνει το ύψος να αναπτυχθεί όσο χρειάζεται */
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  cursor: default; /* Μέσα στην εικόνα το κέρσορας να είναι κανονικός */
 }
 
+/* Το κουμπί κλεισίματος να μένει σταθερό πάνω δεξιά αν θέλεις */
 .modal-close-btn {
-  position: absolute;
-  top: -40px;
-  right: -10px;
-  background: none;
+  position: fixed; /* Σταθερό στην οθόνη */
+  top: 20px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2100;
+  transition: background 0.3s;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
