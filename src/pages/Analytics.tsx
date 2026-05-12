@@ -13,7 +13,7 @@ const Analytics: React.FC = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isStarting, setIsStarting] = useState(false);
   const [completedSession, setCompletedSession] = useState<string | null>(null);
-  
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [error, setError] = useState('');
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
@@ -195,8 +195,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Report Overview</h3>
               <p className="report-card-subtitle">Overview of trends in pupil behavior (Gaze Share)</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.pie_chart}`} alt="Report Overview" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.pie_chart}`)}>
+                <img src={`${API_URL}/${analysisStatus.pie_chart}`} alt="Report Overview" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.pie_chart)} className="report-download-btn">📥 Download</a>
             </div>
@@ -205,8 +205,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Fixation Timeline</h3>
               <p className="report-card-subtitle">Timeline Chart – Fixation events over time</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.timeline_chart}`} alt="Fixation Timeline" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.timeline_chart}`)}>
+                <img src={`${API_URL}/${analysisStatus.timeline_chart}`} alt="Fixation Timeline" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.timeline_chart)} className="report-download-btn">📥 Download</a>
             </div>
@@ -264,6 +264,15 @@ const Analytics: React.FC = () => {
           </div>
         </div>
       )}
+      {/* Modal για μεγέθυνση εικόνας */}
+        {selectedImage && (
+          <div className="image-modal-overlay" onClick={() => setSelectedImage(null)}>
+            <div className="image-modal-content">
+              <button className="modal-close-btn">&times;</button>
+              <img src={selectedImage} alt="Enlarged Report" />
+            </div>
+          </div>
+        )}
     </div>
   );
 };
