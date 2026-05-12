@@ -215,8 +215,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Time to First Fixation (Scientific)</h3>
               <p className="report-card-subtitle">Bar Chart – TTFF per object (scientific notation)</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.ttff_chart}`} alt="TTFF Scientific" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.ttff_chart}`)}>
+                <img src={`${API_URL}/${analysisStatus.ttff_chart}`} alt="TTFF Scientific" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.ttff_chart)} className="report-download-btn">📥 Download</a>
             </div>
@@ -225,8 +225,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Pupil Dynamics</h3>
               <p className="report-card-subtitle">Dynamics of pupil behavior (Average Diameter)</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.pupil_chart}`} alt="Pupil Dynamics" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.pupil_chart}`)}>
+                <img src={`${API_URL}/${analysisStatus.pupil_chart}`} alt="Pupil Dynamics" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.pupil_chart)} className="report-download-btn">📥 Download</a>
             </div>
@@ -235,8 +235,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Dwell Time Analysis</h3>
               <p className="report-card-subtitle">Bar Chart – Total time spent on each object</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.dwell_bar_chart}`} alt="Dwell Time" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.dwell_bar_chart}`)}>
+                <img src={`${API_URL}/${analysisStatus.dwell_bar_chart}`} alt="Dwell Time" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.dwell_bar_chart)} className="report-download-btn">📥 Download</a>
             </div>
@@ -245,8 +245,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Pupil Fluctuations</h3>
               <p className="report-card-subtitle">Line Chart – Diameter fluctuations over time</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.pupil_time_chart}`} alt="Pupil Fluctuations" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.pupil_time_chart)}`)}>
+                <img src={`${API_URL}/${analysisStatus.pupil_time_chart}`} alt="Pupil Fluctuations" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.pupil_time_chart)} className="report-download-btn">📥 Download</a>
             </div>
@@ -255,8 +255,8 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Mean Fixation Duration</h3>
               <p className="report-card-subtitle">Bar Chart – Average duration of gaze fixations</p>
-              <div className="report-image-wrapper">
-                <img src={`${API_URL}/${analysisStatus.mean_fixation}`} alt="Mean Fixation" className="report-image" onError={(e) => e.currentTarget.style.display = 'none'} />
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.mean_fixation}`)}>
+                <img src={`${API_URL}/${analysisStatus.mean_fixation}`} alt="Mean Fixation" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.mean_fixation)} className="report-download-btn">📥 Download</a>
             </div>
