@@ -245,7 +245,7 @@ const Analytics: React.FC = () => {
             <div className="report-card">
               <h3 className="report-card-title">Pupil Fluctuations</h3>
               <p className="report-card-subtitle">Line Chart – Diameter fluctuations over time</p>
-              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.pupil_time_chart)}`)}>
+              <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.pupil_time_chart}`)}>
                 <img src={`${API_URL}/${analysisStatus.pupil_time_chart}`} alt="Pupil Fluctuations" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
               <a href={getDownloadUrl(analysisStatus.pupil_time_chart)} className="report-download-btn">📥 Download</a>
