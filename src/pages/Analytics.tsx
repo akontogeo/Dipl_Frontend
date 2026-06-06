@@ -15,6 +15,7 @@ const Analytics: React.FC = () => {
   const [completedSession, setCompletedSession] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [error, setError] = useState('');
+  import api from '../services/api';
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
@@ -128,7 +129,27 @@ const Analytics: React.FC = () => {
     if (!filePath) return '#';
     return `${API_URL}/analysis/download-report?file_path=${encodeURIComponent(filePath)}`;
   };
+  const handleDownloadReport = async (filePath: string | undefined) => {
+  if (!filePath) return;
 
+  const response = await api.get('/analysis/download-report', {
+    params: { file_path: filePath },
+    responseType: 'blob',
+  });
+
+  const blobUrl = window.URL.createObjectURL(response.data);
+
+  const link = document.createElement('a');
+  link.href = blobUrl;
+  link.download = filePath.split('/').pop() || 'report.png';
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  window.URL.revokeObjectURL(blobUrl);
+};
+  
   return (
     <div className="analytics-page">
       <div className="page-header">
@@ -198,7 +219,7 @@ const Analytics: React.FC = () => {
               <div className="report-image-wrapper" onClick={() => setSelectedImage(`${API_URL}/${analysisStatus.pie_chart}`)}>
                 <img src={`${API_URL}/${analysisStatus.pie_chart}`} alt="Report Overview" className="report-image clickable" onError={(e) => e.currentTarget.style.display = 'none'} />
               </div>
-              <a href={getDownloadUrl(analysisStatus.pie_chart)} className="report-download-btn">📥 Download</a>
+              <button type="button" onClick={() => handleDownloadReport(analysisStatus.pie_chart)} className="report-download-btn">📥 Download </button>
             </div>
 
             {/* 2. Fixation Timeline (Updated) */}
