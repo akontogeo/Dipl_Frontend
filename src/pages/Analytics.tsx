@@ -3,6 +3,7 @@ import './Analytics.css';
 import { listSessions } from '../services/gazeService';
 import { startAnalysis, getAnalysisStatus } from '../services/analysisService';
 import { AnalysisStatus } from '../types/api';
+import api from '../services/api';
 
 const Analytics: React.FC = () => {
   const [sessions, setSessions] = useState<string[]>([]);
@@ -15,7 +16,7 @@ const Analytics: React.FC = () => {
   const [completedSession, setCompletedSession] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [error, setError] = useState('');
-  import api from '../services/api';
+  
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
